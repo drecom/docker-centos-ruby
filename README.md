@@ -1,5 +1,5 @@
 # docker-ubuntu-ruby
-
+[![CircleCI](https://circleci.com/gh/drecom/docker-centos-ruby/tree/master.svg?style=svg)](https://circleci.com/gh/drecom/docker-centos-ruby/tree/master)
 
 A Ubuntu ruby docker container
 
