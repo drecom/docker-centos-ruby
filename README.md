@@ -1,7 +1,7 @@
 # docker-centos-ruby
 [![CircleCI](https://circleci.com/gh/drecom/docker-centos-ruby/tree/master.svg?style=svg)](https://circleci.com/gh/drecom/docker-centos-ruby/tree/master)
 
-A Ubuntu ruby docker container
+A CentOS ruby docker container
 
 It's on [docker-hub](https://hub.docker.com/r/drecom/centos-ruby/) and [github](https://github.com/drecom/docker-centos-ruby/)
 
