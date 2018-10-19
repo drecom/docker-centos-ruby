@@ -26,6 +26,10 @@ ENV PATH /usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH
 
 ENV RBENV_VERSION 2.5.2
 
+# issue: https://bugs.ruby-lang.org/issues/15232
+RUN eval "$(rbenv init -)"; rbenv install 2.5.1
+&&  eval "$(rbenv init -)"; rbenv global 2.5.1
+
 RUN eval "$(rbenv init -)"; rbenv install $RBENV_VERSION \
 &&  eval "$(rbenv init -)"; rbenv global $RBENV_VERSION \
 &&  eval "$(rbenv init -)"; gem update --system \
