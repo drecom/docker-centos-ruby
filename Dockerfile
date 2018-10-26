@@ -2,7 +2,7 @@
 #
 # VERSION               0.0.1
 
-FROM     drecom/centos-base:latest
+FROM     drecom/centos-base:latest AS build
 
 MAINTAINER Drecom Technical Development Department <pr_itn@drecom.co.jp>
 
