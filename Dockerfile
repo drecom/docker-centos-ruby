@@ -28,3 +28,10 @@ RUN eval "$(rbenv init -)"; rbenv install 2.3.1 \
 &&  eval "$(rbenv init -)"; rbenv global 2.3.1 \
 &&  eval "$(rbenv init -)"; gem update --system \
 &&  eval "$(rbenv init -)"; gem install bundler
+
+FROM centos:7
+ENV RBENV_ROOT /usr/local/rbenv
+COPY --from=build $RBENV_ROOT $RBENV_ROOT
+ENV PATH /usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH
+RUN echo 'export RBENV_ROOT=/usr/local/rbenv' >> /root/.bashrc \
+&&  echo 'eval "$(rbenv init -)"' >> /root/.bashrc
