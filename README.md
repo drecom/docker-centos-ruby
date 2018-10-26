@@ -15,6 +15,7 @@ It's on [docker-hub](https://hub.docker.com/r/drecom/centos-ruby/) and [github](
 * `2.4.2` [(2.4.2/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.4.2/Dockerfile)
 * `2.4.1` [(2.4.1/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.4.1/Dockerfile)
 * `2.4.0` [(2.4.0/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.4.0/Dockerfile)
+* `2.3.8` [(2.3.8/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.3.8/Dockerfile)
 * `2.3.7` [(2.3.7/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.3.7/Dockerfile)
 * `2.3.6` [(2.3.6/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.3.6/Dockerfile)
 * `2.3.5` [(2.3.5/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.3.5/Dockerfile)
