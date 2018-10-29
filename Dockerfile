@@ -31,11 +31,9 @@ RUN eval "$(rbenv init -)"; rbenv install $RBENV_VERSION \
 &&  eval "$(rbenv init -)"; gem install bundler -f \
 &&  rm -rf /tmp/*
 
-FROM centos:latest
+FROM centos:7
 ENV RBENV_ROOT /usr/local/rbenv
-
 COPY --from=build $RBENV_ROOT $RBENV_ROOT
-
 ENV PATH /usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH
 
 RUN echo 'export RBENV_ROOT=/usr/local/rbenv' >> /root/.bashrc \
