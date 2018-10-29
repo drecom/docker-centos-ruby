@@ -31,10 +31,13 @@ RUN eval "$(rbenv init -)"; rbenv install $RBENV_VERSION \
 &&  eval "$(rbenv init -)"; gem install bundler -f \
 &&  rm -rf /tmp/*
 
-FROM centos:7
+FROM centos:latest
 ENV RBENV_ROOT /usr/local/rbenv
 
 COPY --from=build $RBENV_ROOT $RBENV_ROOT
+
 ENV PATH /usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH
+
 RUN echo 'export RBENV_ROOT=/usr/local/rbenv' >> /root/.bashrc \
-&&  echo 'eval "$(rbenv init -)"' >> /root/.bashrc
+&&  echo 'eval "$(rbenv init -)"' >> /root/.bashrc \
+&&  yum -y install epel-release make gcc git libxslt-devel openssl-dev mysql-dev redis sqlite-devel
