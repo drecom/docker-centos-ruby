@@ -39,4 +39,5 @@ ENV PATH /usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH
 
 RUN echo 'export RBENV_ROOT=/usr/local/rbenv' >> /root/.bashrc \
 &&  echo 'eval "$(rbenv init -)"' >> /root/.bashrc \
-&&  yum -y install epel-release make gcc git libxslt-devel openssl-dev mysql-dev redis sqlite-devel
+&&  yum -y install epel-release \
+&&  yum -y install make gcc git libxslt-devel openssl-devel mysql-devel redis sqlite-devel bzip2
