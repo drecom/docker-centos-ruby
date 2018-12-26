@@ -1,14 +1,17 @@
-FROM drecom/centos-base:latest AS rubybuild
-LABEL maintainer "Drecom Technical Development Department <pr_itn@drecom.co.jp>"
+ARG RUBY_PATH=/usr/local/ruby
+ARG RUBY_VERSION=2.6.0
 
-ENV RUBY_VERSION 2.6.0
-RUN git clone git://github.com/rbenv/ruby-build.git /usr/local/ruby/plugins/ruby-build \
-&&  /usr/local/ruby/plugins/ruby-build/install.sh
-RUN ruby-build $RUBY_VERSION /usr/local/ruby
+FROM drecom/centos-base:latest AS rubybuild
+ARG RUBY_PATH
+ARG RUBY_VERSION
+RUN git clone git://github.com/rbenv/ruby-build.git $RUBY_PATH/plugins/ruby-build \
+&&  $RUBY_PATH/plugins/ruby-build/install.sh
+RUN ruby-build $RUBY_VERSION $RUBY_PATH
 
 FROM centos:7
-ENV PATH /usr/local/ruby/bin:$PATH
-COPY --from=rubybuild /usr/local/ruby /usr/local/ruby
+LABEL maintainer "Drecom Technical Development Department <pr_itn@drecom.co.jp>"
+ARG RUBY_PATH
+ENV PATH $RUBY_PATH/bin:$PATH
 RUN yum -y install \
         epel-release \
         make \
@@ -19,3 +22,5 @@ RUN yum -y install \
         mysql-dev \
         redis \
         sqlite-devel
+COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
+CMD [ "irb" ]
