@@ -17,8 +17,8 @@ RUN yum -y install \
         make \
         gcc \
         git \
-        libxslt-devel \
         openssl-dev \
+        zlib-devel \
         mysql-dev \
         redis \
         sqlite-devel
