@@ -19,7 +19,7 @@ RUN yum -y install \
         git \
         openssl-dev \
         zlib-devel \
-        mysql-dev \
+        mysql-devel \
         redis \
         sqlite-devel
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
