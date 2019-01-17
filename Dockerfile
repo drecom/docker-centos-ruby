@@ -17,7 +17,7 @@ RUN yum -y install \
         make \
         gcc \
         git \
-        openssl-dev \
+        openssl-devel \
         zlib-devel \
         mysql-devel \
         redis \
