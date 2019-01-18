@@ -12,15 +12,5 @@ FROM centos:7
 LABEL maintainer "Drecom Technical Development Department <pr_itn@drecom.co.jp>"
 ARG RUBY_PATH
 ENV PATH $RUBY_PATH/bin:$PATH
-RUN yum -y install \
-        epel-release \
-        make \
-        gcc \
-        git \
-        openssl-devel \
-        zlib-devel \
-        mysql-devel \
-        redis \
-        sqlite-devel
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
 CMD [ "irb" ]
