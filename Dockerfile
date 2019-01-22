@@ -13,4 +13,6 @@ LABEL maintainer "Drecom Technical Development Department <pr_itn@drecom.co.jp>"
 ARG RUBY_PATH
 ENV PATH $RUBY_PATH/bin:$PATH
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
+
+RUN gem install bundler -N
 CMD [ "irb" ]
