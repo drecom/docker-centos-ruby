@@ -23,4 +23,6 @@ RUN yum -y install \
         redis \
         sqlite-devel
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
+
+RUN gem install bundler -N
 CMD [ "irb" ]
