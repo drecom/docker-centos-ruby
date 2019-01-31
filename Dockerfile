@@ -1,4 +1,4 @@
-ARG RUBY_PATH=/usr/local/
+ARG RUBY_PATH=/usr/local
 ARG RUBY_VERSION=2.6.0
 
 # ruby-build stage
@@ -7,7 +7,7 @@ ARG RUBY_PATH
 ARG RUBY_VERSION
 RUN git clone git://github.com/rbenv/ruby-build.git $RUBY_PATH/plugins/ruby-build \
 &&  $RUBY_PATH/plugins/ruby-build/install.sh
-RUN ruby-build $RUBY_VERSION $RUBY_PATH
+RUN ruby-build $RUBY_VERSION $RUBY_PATH/
 
 # ruby execution stage
 FROM centos:7
