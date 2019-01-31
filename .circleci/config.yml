@@ -31,10 +31,6 @@ jobs:
           paths:
             - /caches/image.tar
       - run:
-          name: rails new Project
-          command: |
-            docker run -it --rm centos-ruby bash -c "gem install rails && cd /tmp && rails new test-app"
-      - run:
           name: Show docker image size
           command: |
             docker images
