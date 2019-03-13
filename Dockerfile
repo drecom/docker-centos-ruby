@@ -16,5 +16,5 @@ ARG RUBY_PATH
 ENV PATH $RUBY_PATH/bin:$PATH
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
 
-RUN gem install bundler -N
+RUN gem update --system
 CMD [ "irb" ]
