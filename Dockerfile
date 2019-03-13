@@ -24,5 +24,5 @@ RUN yum -y install \
         sqlite-devel
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
 
-RUN gem install bundler -N
+RUN gem update --system
 CMD [ "irb" ]
