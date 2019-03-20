@@ -1,0 +1,46 @@
+steps:
+- name: gcr.io/kaniko-project/executor
+  args:
+  - --destination=gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME
+  - --cache=true
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: 
+  - pull
+  - gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME
+
+- name: 'gcr.io/gcp-runtimes/container-structure-test'
+  args: 
+  - test 
+  - --image
+  - gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME
+  - --config
+  - container-structure-test.yml
+
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: 
+  - -c
+  - docker login --username=drecomdockerhub --password=$$DOCKERHUB_PASSWORD
+  secretEnv:
+  - DOCKERHUB_PASSWORD
+
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: 
+  - -c
+  - docker tag gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME drecom/centos-ruby:$BRANCH_NAME
+
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: 
+  - -c
+  - docker push drecom/centos-ruby:$BRANCH_NAME
+
+substitutions:
+  _BRANCH_NAME: $BRANCH_NAME
+
+secrets:
+- kmsKeyName: projects/gcp-dre-dev/locations/global/keyRings/drecom-dockerhub/cryptoKeys/drecom-dockerhub
+  secretEnv:
+    DOCKERHUB_PASSWORD: CiQAVyjejT2cYeIb3kVx+go8Q54lyQN4s8XL2AEM1ngWycCOpkESSAAUNAqLElsfQ2pIe+Wabxs7DcF+4YIc0i+gRmOl/qxil2/DgRAEYSoZH33N8/yOQ0MpXOmpt0BZRfp8Ed+jJMUzLiRz7SLOqA==
