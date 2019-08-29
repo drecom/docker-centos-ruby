@@ -25,7 +25,5 @@ steps:
   - REPO_NAME=$REPO_NAME
   - COMMIT_SHA="latest"
   - _DOCKERHUB_PASSWORD=$_DOCKERHUB_PASSWORD
-  secretEnv:
-  - DOCKERHUB_PASSWORD
   args:
   - ./scripts/push_dockerhub.sh 
