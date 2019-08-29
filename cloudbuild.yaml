@@ -1,19 +1,19 @@
 steps:
 - name: gcr.io/kaniko-project/executor
   args:
-  - --destination=gcr.io/$PROJECT_ID/$REPO_NAME:latest
+  - --destination=gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
   - --cache=true
 
 - name: 'gcr.io/cloud-builders/docker'
   args: 
   - pull
-  - gcr.io/$PROJECT_ID/$REPO_NAME:latest
+  - gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
 
 - name: 'gcr.io/gcp-runtimes/container-structure-test'
   args: 
   - test 
   - --image
-  - gcr.io/$PROJECT_ID/$REPO_NAME:latest
+  - gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
   - --config
   - container-structure-test.yml
 
@@ -23,7 +23,7 @@ steps:
   - BRANCH_NAME=$BRANCH_NAME
   - PROJECT_ID=$PROJECT_ID
   - REPO_NAME=$REPO_NAME
-  - COMMIT_SHA=latest
+  - COMMIT_SHA=$COMMIT_SHA
   - _DOCKERHUB_PASSWORD=$_DOCKERHUB_PASSWORD
   args:
   - ./scripts/push_dockerhub.sh 
