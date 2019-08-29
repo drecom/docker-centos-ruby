@@ -23,7 +23,7 @@ steps:
   - BRANCH_NAME=$BRANCH_NAME
   - PROJECT_ID=$PROJECT_ID
   - REPO_NAME=$REPO_NAME
-  - COMMIT_SHA="latest"
+  - COMMIT_SHA=latest
   - _DOCKERHUB_PASSWORD=$_DOCKERHUB_PASSWORD
   args:
   - ./scripts/push_dockerhub.sh 
