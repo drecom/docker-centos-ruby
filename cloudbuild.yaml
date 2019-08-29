@@ -24,12 +24,6 @@ steps:
   - PROJECT_ID=$PROJECT_ID
   - REPO_NAME=$REPO_NAME
   - COMMIT_SHA=$COMMIT_SHA
-  secretEnv:
-  - DOCKERHUB_PASSWORD
+  - _DOCKERHUB_PASSWORD=$_DOCKERHUB_PASSWORD
   args:
   - ./scripts/push_dockerhub.sh 
-
-secrets:
-- kmsKeyName: projects/gcp-dre-dev/locations/global/keyRings/drecom-dockerhub/cryptoKeys/drecom-dockerhub
-  secretEnv:
-    DOCKERHUB_PASSWORD: CiQAVyjejT2cYeIb3kVx+go8Q54lyQN4s8XL2AEM1ngWycCOpkESSAAUNAqLElsfQ2pIe+Wabxs7DcF+4YIc0i+gRmOl/qxil2/DgRAEYSoZH33N8/yOQ0MpXOmpt0BZRfp8Ed+jJMUzLiRz7SLOqA==
