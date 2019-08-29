@@ -1,19 +1,19 @@
 steps:
 - name: gcr.io/kaniko-project/executor
   args:
-  - --destination=gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
+  - --destination=gcr.io/$PROJECT_ID/$REPO_NAME:latest
   - --cache=true
 
 - name: 'gcr.io/cloud-builders/docker'
   args: 
   - pull
-  - gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
+  - gcr.io/$PROJECT_ID/$REPO_NAME:latest
 
 - name: 'gcr.io/gcp-runtimes/container-structure-test'
   args: 
   - test 
   - --image
-  - gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
+  - gcr.io/$PROJECT_ID/$REPO_NAME:latest
   - --config
   - container-structure-test.yml
 
@@ -23,13 +23,9 @@ steps:
   - BRANCH_NAME=$BRANCH_NAME
   - PROJECT_ID=$PROJECT_ID
   - REPO_NAME=$REPO_NAME
-  - COMMIT_SHA=$COMMIT_SHA
+  - COMMIT_SHA="latest"
+  - _DOCKERHUB_PASSWORD=$_DOCKERHUB_PASSWORD
   secretEnv:
   - DOCKERHUB_PASSWORD
   args:
   - ./scripts/push_dockerhub.sh 
-
-secrets:
-- kmsKeyName: projects/gcp-dre-dev/locations/global/keyRings/drecom-dockerhub/cryptoKeys/drecom-dockerhub
-  secretEnv:
-    DOCKERHUB_PASSWORD: CiQAVyjejT2cYeIb3kVx+go8Q54lyQN4s8XL2AEM1ngWycCOpkESSAAUNAqLElsfQ2pIe+Wabxs7DcF+4YIc0i+gRmOl/qxil2/DgRAEYSoZH33N8/yOQ0MpXOmpt0BZRfp8Ed+jJMUzLiRz7SLOqA==
