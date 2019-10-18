@@ -1,5 +1,5 @@
 ARG RUBY_PATH=/usr/local
-ARG RUBY_VERSION=2.6.4
+ARG RUBY_VERSION=2.6.5
 
 FROM drecom/centos-base:7 AS rubybuild
 ARG RUBY_PATH
