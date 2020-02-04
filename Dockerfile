@@ -21,7 +21,8 @@ RUN yum -y install \
         zlib-devel \
         mysql-devel \
         redis \
-        sqlite-devel
+        sqlite-devel \
+	bzip2
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
 
 RUN gem update --system
