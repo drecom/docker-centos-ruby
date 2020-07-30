@@ -1,3 +1,4 @@
+timeout: 45m
 steps:
 - name: gcr.io/kaniko-project/executor
   args:
