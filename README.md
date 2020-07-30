@@ -8,6 +8,8 @@ It's on [docker-hub](https://hub.docker.com/r/drecom/centos-ruby/) and [github](
 
 ## tags and links
 * `latest` [(master/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/master/Dockerfile)
+* `2.6.6-slim` [(2.6.6-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.6-slim/Dockerfile)
+* `2.6.6` [(2.6.6/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.6/Dockerfile)
 * `2.6.5-slim` [(2.6.5-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.5-slim/Dockerfile)
 * `2.6.5` [(2.6.5/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.5/Dockerfile)
 * `2.6.4-slim` [(2.6.4-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.4-slim/Dockerfile)
@@ -20,6 +22,8 @@ It's on [docker-hub](https://hub.docker.com/r/drecom/centos-ruby/) and [github](
 * `2.6.1` [(2.6.1/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.1/Dockerfile)
 * `2.6.0-slim` [(2.6.0-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.0-slim/Dockerfile)
 * `2.6.0` [(2.6.0/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.0/Dockerfile)
+* `2.5.8-slim` [(2.5.8-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.5.8-slim/Dockerfile)
+* `2.5.8` [(2.5.8/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.5.8/Dockerfile)
 * `2.5.7-slim` [(2.5.7-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.5.7-slim/Dockerfile)
 * `2.5.7` [(2.5.7/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.5.7/Dockerfile)
 * `2.5.6-slim` [(2.5.6-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.5.6-slim/Dockerfile)
@@ -33,6 +37,8 @@ It's on [docker-hub](https://hub.docker.com/r/drecom/centos-ruby/) and [github](
 * `2.5.2` [(2.5.2/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.5.2/Dockerfile)
 * `2.5.1` [(2.5.1/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.5.1/Dockerfile)
 * `2.5.0` [(2.5.0/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.5.0/Dockerfile)
+* `2.4.10-slim` [(2.4.10-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.4.10-slim/Dockerfile)
+* `2.4.10` [(2.4.10/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.4.10/Dockerfile)
 * `2.4.9-slim` [(2.4.9-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.4.9-slim/Dockerfile)
 * `2.4.9` [(2.4.9/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.4.9/Dockerfile)
 * `2.4.7-slim` [(2.4.7-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.4.7-slim/Dockerfile)
