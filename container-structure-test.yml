@@ -6,7 +6,7 @@ commandTests:
   args:
   - "--version"
   expectedOutput: 
-  - .*2\.7\.2.*
+  - .*2\.7\.1.*
 
 fileExistenceTests:
   - name: ruby
