@@ -1,10 +1,10 @@
 ---
-schemaVersion: 2.0.0
+schemaVersion: '2.0.0'
 commandTests:
-- name: "ruby version"
-  command: "ruby"
+- name: 'ruby version'
+  command: 'ruby'
   args:
-  - "--version"
+  - '--version'
   expectedOutput: 
   - .*3\.0\.2.*
 
