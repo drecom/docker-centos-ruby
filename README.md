@@ -8,6 +8,7 @@ It's on [docker-hub](https://hub.docker.com/r/drecom/centos-ruby/) and [github](
 
 ## tags and links
 * `latest` [(master/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/master/Dockerfile)
+* `3.0.2-slim` [(3.0.2-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/3.0.2-slim/Dockerfile)
 * `2.6.2-slim` [(2.6.2-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.2-slim/Dockerfile)
 * `2.6.2` [(2.6.2/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.2/Dockerfile)
 * `2.6.1-slim` [(2.6.1-slim/Dockerfile)](https://github.com/drecom/docker-centos-ruby/blob/2.6.1-slim/Dockerfile)
