@@ -8,7 +8,8 @@ ARG RUBY_VERSION
 ARG RUBY_CONFIGURE_OPTS
 RUN git clone git://github.com/rbenv/ruby-build.git $RUBY_PATH/plugins/ruby-build \
 &&  $RUBY_PATH/plugins/ruby-build/install.sh
-RUN yum -y install jemalloc-devel
+RUN yum -y install jemalloc-devel \
+         openssl-devel
 RUN RUBY_CONFIGURE_OPTS=$RUBY_CONFIGURE_OPTS ruby-build $RUBY_VERSION $RUBY_PATH/
 
 FROM centos:7
@@ -26,8 +27,7 @@ RUN yum -y install \
         mysql-devel \
         redis \
         sqlite-devel \
-	bzip2 \
-        openssl-devel
+	bzip2
 
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
 
