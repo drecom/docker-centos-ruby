@@ -1,5 +1,5 @@
 ARG RUBY_PATH=/usr/local
-ARG RUBY_VERSION=3.0.2
+ARG RUBY_VERSION=3.0.3
 ARG RUBY_CONFIGURE_OPTS=--with-jemalloc
 
 FROM drecom/centos-base:7 AS rubybuild
