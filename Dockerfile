@@ -26,7 +26,8 @@ RUN yum -y install \
         mysql-devel \
         redis \
         sqlite-devel \
-	bzip2
+	bzip2 \
+        openssl-devel
 
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
 
