@@ -6,7 +6,7 @@ FROM drecom/centos-base:7 AS rubybuild
 ARG RUBY_PATH
 ARG RUBY_VERSION
 ARG RUBY_CONFIGURE_OPTS
-RUN git clone git://github.com/rbenv/ruby-build.git $RUBY_PATH/plugins/ruby-build \
+RUN git clone https://github.com/rbenv/ruby-build.git $RUBY_PATH/plugins/ruby-build \
 &&  $RUBY_PATH/plugins/ruby-build/install.sh
 RUN yum -y install jemalloc-devel
 RUN RUBY_CONFIGURE_OPTS=$RUBY_CONFIGURE_OPTS ruby-build $RUBY_VERSION $RUBY_PATH/
