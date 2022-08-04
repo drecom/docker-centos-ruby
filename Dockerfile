@@ -1,10 +1,10 @@
 ARG RUBY_PATH=/usr/local
-ARG RUBY_VERSION=2.6.7
+ARG RUBY_VERSION=2.6.10
 
 FROM drecom/centos-base:7 AS rubybuild
 ARG RUBY_PATH
 ARG RUBY_VERSION
-RUN git clone git://github.com/rbenv/ruby-build.git $RUBY_PATH/plugins/ruby-build \
+RUN git clone https://github.com/rbenv/ruby-build.git $RUBY_PATH/plugins/ruby-build \
 &&  $RUBY_PATH/plugins/ruby-build/install.sh
 RUN ruby-build $RUBY_VERSION $RUBY_PATH/
 
